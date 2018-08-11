@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Programming Tricks]]></title>
+    <url>%2F2018%2F08%2F08%2Fstrange-programing-strategies%2F</url>
+    <content type="text"><![CDATA[some strange programing strategies(c++) Determine if it is odd numbernumber &amp; 0x1 == 0x1ornumber %2 != 0]]></content>
+      <categories>
+        <category>program</category>
+        <category>c++</category>
+      </categories>
+      <tags>
+        <tag>tricks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git notes]]></title>
+    <url>%2F2018%2F08%2F01%2Fgit%2F</url>
+    <content type="text"><![CDATA[How to use git? initialize a repository:git init add changed files to the stagegit add &lt;filename1&gt; &lt;filename2&gt; ... remove the file from the working directory or the stagegit rm &lt;filename&gt; commit changes with a message to the repositotygit commit -m &lt;message&gt; discard the changes in working directorygit checkout -- &lt;filename&gt; reset the stagegit resrt head &lt;filename&gt; reset the head pointergit reset [para] &lt;commit-id&gt; get status infomation of the repositorygit status get the changes informationgit diff [commit-id1] [commit-id2] -- [filename] get commit loggit log [--graph --oneline] get all loggit reflog get the infomation of tagsgit show [tagname] rebase the separate commit historys on the same branch to a linegit rebase associate the local repository to a remote one named origingit remote add origin git@server-name:path/repo-name.git clone a remote repository with master branch to local working directorygit clone git@server-name:path/repo-name.git push the local repository to the remotegit push [-u] &lt;remote repositoty&gt; &lt;branch of local repository or tag&gt; pull changes to local working directorygit pull list, creat or delete branchgit branch [-d] [branchname] [remote branch] assoicate the local branch to the removegit branch --set-upstream-to=origin/dev dev switch the current branch or swich and create a new branchgit checkout [-b] &lt;branchname&gt; merge the current branch to the specified branchgit merge [--no-ff -m &quot;...&quot;] save the changed work and stagegit stash list the stashgit stash list apply the stashgit stash apply [s] delete the stashgit stash drop show tags or give commit a tag or delete itgit tag [-a tagname] [-m &quot;...&quot;] [-d] [commit-id] delete the remote taggit push origin :refs/tags/&lt;tagname&gt; operate the remote repositorygit remote [-v] [rm] [add] Linux commands man //manual sudo //superuser do clear //clear the command windows mkdir &lt;directory&gt; //make a directory rmdir &lt;directory&gt; //remove the directory cd &lt;directory&gt; //change the work directory pwd //print the working directory ls [para] [dir] //list the files in a directory rm &lt;filename&gt; //remove the file mv &lt;filename&gt; &lt;directory&gt; //move the file cp &lt;filename&gt; &lt;fiename&gt; //copy the file cat [para] &lt;inputfile1&gt; [inputfile2] ... [operator] [outputfile] //cconcatenate files and print on the standard output diff &lt;file1&gt; &lt;file2&gt; official help for git:123456789101112131415161718192021222324252627282930313233343536373839404142usage: git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;] [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path] [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare] [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;] &lt;command&gt; [&lt;args&gt;]These are common Git commands used in various situations:start a working area (see also: git help tutorial) clone Clone a repository into a new directory init Create an empty Git repository or reinitialize an existing onework on the current change (see also: git help everyday) add Add file contents to the index mv Move or rename a file, a directory, or a symlink reset Reset current HEAD to the specified state rm Remove files from the working tree and from the indexexamine the history and state (see also: git help revisions) bisect Use binary search to find the commit that introduced a bug grep Print lines matching a pattern log Show commit logs show Show various types of objects status Show the working tree statusgrow, mark and tweak your common history branch List, create, or delete branches checkout Switch branches or restore working tree files commit Record changes to the repository diff Show changes between commits, commit and working tree, etc merge Join two or more development histories together rebase Reapply commits on top of another base tip tag Create, list, delete or verify a tag object signed with GPGcollaborate (see also: git help workflows) fetch Download objects and refs from another repository pull Fetch from and integrate with another repository or a local branch push Update remote refs along with associated objects'git help -a' and 'git help -g' list available subcommands and someconcept guides. See 'git help &lt;command&gt;' or 'git help &lt;concept&gt;'to read about a specific subcommand or concept. additional pictures and linksgit cheat sheet]]></content>
+      <categories>
+        <category>program</category>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[清晨的歌剧院|朝歌]]></title>
+    <url>%2F2018%2F07%2F31%2Freadme%2F</url>
+    <content type="text"><![CDATA[欢迎来到这个博客 为什么我想要创建一个博客？ 记录来自生活的感想 记录来自学习的经验 为什么使用“清晨的歌剧院”这个名字？ 我的昵称是“朝歌”，其原意就是“清晨的歌剧院” 想象一下，清晨，在歌剧院闭上眼，享受生活，会是一件多么惬意的事情 怎样使用博客的菜单？ 首页：所有文章的预览 标签：列出文章的标签 分类：列出文章的分类 归档：按时间线列出所所有文章 关于：有关作者的信息以及留言 搜索：搜索博客内任意相关信息]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[搭建基于Hexo和Github Page的博客]]></title>
+    <url>%2F2018%2F07%2F28%2Fhexo-blog%2F</url>
+    <content type="text"><![CDATA[这个博客由Hexo驱动，使用NeXT主题,托管于Github Pages服务 生成博客 安装git和node.js 安装Hexo：打开终端输入以下命令 1npm install -g hexo-cli 初始化Hexo：新建文件夹，在文件夹内打开终端输入以下命令 1hexo init 生成静态文件启动本地服务器：在终端输入以下命令(有些情况只需使用 hexo s) 123hexo cleanhexo ghexo s 预览博客：打开浏览器输入网址http://localhost:4000 配置博客 安装主题：在终端输入以下命令 1git clone https://github.com/iissnan/hexo-theme-next themes/next 安装顶置和搜索功能插件：在终端输入以下命令 123npm uninstall hexo-generator-index --savenpm install hexo-generator-index-pin-top --savenpm install hexo-generator-searchdb --save 修改站点配置文件（_config.yml） 1theme: next 修改主题配置文件（\themes\next_config.yml） 自定义翻译（\themes\next\languages\zh-Hans.yml） 自定义默认文章格式（\scaffolds\post.md） 添加菜单页面 生成菜单页面：在终端输入以下命令（pagename为tags，categories，about等） 1hexo new page pagename 修改菜单页面：打开文件（\source\pagename\index.md），在头部添加 1type: &quot;pagename&quot; 添加文章 新建文章：在终端输入以下命令 1hexo new postname 打开并修改文章（source_post\postname.md） 部署到Github 配置Git：在终端输入以下命令 12git config --global user.name "username"git config --global user.email "useremail" 生成SSH key：在终端输入以下命令： 1ssh-keygen -t rsa -C "useremail" 配置SSH key：复制C:\Users\pcusername.ssh\id_rsa.pub中的key，在Github设置页面中添加SSH keys 新建一个Github仓库,名字为&lt;username.github.io&gt; 安装部署插件：在终端输入以下命令 1npm install hexo-deployer-git --save 修改站点配置文件（_config.yml）: 1234deploy: type: git repo: https://github.com/username/username.github.io.git branch: master 生成并部署到username.github.io.git仓库：在终端输入以下命令 绑定个人域名 注册域名 domain.xxx 添加解析 type recode value A @ 192.30.252.153 A @ 192.30.252.154 CNAME www username.github.io 设置自定义域名：在username.github.io仓库的设置中设置自定义域名domain.xxx 添加CNAME文件：在source文件夹中添加CNAME文件并编辑内容为你的域名domain.xxx 部署到Github：终端输入以下命令 12hexo ghexo d]]></content>
+      <categories>
+        <category>page</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NeXT</tag>
+      </tags>
+  </entry>
+</search>
