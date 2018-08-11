@@ -1942,7 +1942,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4b5d6c;
+  background: #ffcd73;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3029,6 +3029,9 @@ hr {
 .post-button {
   text-align: center;
 }
+.post-button a {
+  border-bottom: 2px solid rgba(0,0,0,0);
+}
 @media screen and (min-width: 415px) {
   .post {
     padding: 5px 25px 20px;
@@ -3075,7 +3078,7 @@ hr {
   }
   .post-button a:hover {
     background: none;
-    font-weight: bold;
+    border-bottom: 2px solid #555;
   }
   .footer-inner {
     text-align: center;
