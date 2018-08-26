@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[YunyangMount]]></title>
+    <url>%2F2018%2F08%2F26%2Fyunyangmount%2F</url>
+    <content type="text"><![CDATA[The Yun yang mountain in Chaling, Hunan]]></content>
+      <categories>
+        <category>scenery</category>
+      </categories>
+      <tags>
+        <tag>yunyang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Programming Tricks]]></title>
     <url>%2F2018%2F08%2F08%2Fstrange-programing-strategies%2F</url>
     <content type="text"><![CDATA[some strange programing strategies(c++) Determine if it is odd numbernumber &amp; 0x1 == 0x1ornumber %2 != 0]]></content>
@@ -10,17 +21,6 @@
       </categories>
       <tags>
         <tag>tricks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[YunyangMount]]></title>
-    <url>%2F2018%2F08%2F08%2Fyunyangmount%2F</url>
-    <content type="text"><![CDATA[The Yun yang mountain in Chaling, Hunan]]></content>
-      <categories>
-        <category>scenery</category>
-      </categories>
-      <tags>
-        <tag>yunyang</tag>
       </tags>
   </entry>
   <entry>
