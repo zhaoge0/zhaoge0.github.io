@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[my-functions]]></title>
     <url>%2F2018%2F09%2F02%2Fmy-functions%2F</url>
-    <content type="text"><![CDATA[brief introduction print the binary data123456789101112131415template &lt;typename T&gt;void printb(T t)&#123; typedef unsigned long long ull; ull buff = reinterpret_cast&lt;ull&amp;&gt;(t); const size_t len = sizeof(T) * 8; char s[len + 1]; s[len] = '\0'; for (size_t i = len - 1; i != (size_t)-1; --i) &#123; s[i] = buff &amp; 1 ? '1' : '0'; buff &gt;&gt;= 1; &#125; cout &lt;&lt; s &lt;&lt; endl;&#125;]]></content>
+    <content type="text"><![CDATA[function used frequently print the binary data123456789101112131415template &lt;typename T&gt;void printb(T t)&#123; typedef unsigned long long ull; ull buff = reinterpret_cast&lt;ull&amp;&gt;(t); const size_t len = sizeof(T) * 8; char s[len + 1]; s[len] = '\0'; for (size_t i = len - 1; i != (size_t)-1; --i) &#123; s[i] = buff &amp; 1 ? '1' : '0'; buff &gt;&gt;= 1; &#125; cout &lt;&lt; s &lt;&lt; endl;&#125;]]></content>
       <categories>
         <category>program</category>
         <category>c++</category>
