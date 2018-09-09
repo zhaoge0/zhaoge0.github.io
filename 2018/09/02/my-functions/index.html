@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="清晨的歌剧院">
 <meta property="og:description" content="functions used frequently">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-03T03:06:08.550Z">
+<meta property="og:updated_time" content="2018-09-09T14:56:31.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my functions">
 <meta name="twitter:description" content="functions used frequently">
@@ -359,8 +359,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-03T11:06:08+08:00">
-                2018-09-03
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-09T22:56:31+08:00">
+                2018-09-09
               </time>
             
           </span>
@@ -439,7 +439,7 @@
         <blockquote class="blockquote-center"><p>functions used frequently</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="print-the-binary-data"><a href="#print-the-binary-data" class="headerlink" title="print the binary data"></a>print the binary data</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printb</span><span class="params">(<span class="keyword">const</span> T&amp; t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[len + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line">	<span class="keyword">auto</span> buff = <span class="keyword">const_cast</span>&lt;ull&amp;&gt;(<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">const</span> ull&amp;&gt;(t));</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">size_t</span> len = <span class="keyword">sizeof</span>(T) * <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">	s[len] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">size_t</span> i = len - <span class="number">1</span>; i != (<span class="keyword">size_t</span>)<span class="number">-1</span>; --i)</span><br><span class="line">	&#123;</span><br><span class="line">		s[i] = buff &amp; <span class="number">1</span> ? <span class="string">'1'</span> : <span class="string">'0'</span>;</span><br><span class="line">		buff &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="print-the-binary-data"><a href="#print-the-binary-data" class="headerlink" title="print the binary data"></a>print the binary data</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printb</span><span class="params">(<span class="keyword">const</span> T&amp; t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[len + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line">	<span class="keyword">auto</span> buff = <span class="keyword">const_cast</span>&lt;ull&amp;&gt;(<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">const</span> ull&amp;&gt;(t));</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">size_t</span> len = <span class="keyword">sizeof</span>(T) * <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">	s[len] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">size_t</span> i = len - <span class="number">1</span>; i != (<span class="keyword">size_t</span>)<span class="number">-1</span>; --i)</span><br><span class="line">	&#123;</span><br><span class="line">		s[i] = buff &amp; <span class="number">1</span> ? <span class="string">'1'</span> : <span class="string">'0'</span>;</span><br><span class="line">		buff &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -498,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/after-reading-how-does-the-program-run/" rel="next" title="after-reading-how-does-the-program-run">
-                <i class="fa fa-chevron-left"></i> after-reading-how-does-the-program-run
+              <a href="/2018/08/26/yunyangmount/" rel="next" title="YunyangMount">
+                <i class="fa fa-chevron-left"></i> YunyangMount
               </a>
             
           </div>
@@ -507,6 +507,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/09/essay-sencond-year1/" rel="prev" title="大学第二年-上">
+                大学第二年-上 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -601,7 +605,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
