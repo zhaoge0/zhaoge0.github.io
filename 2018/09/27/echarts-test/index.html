@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Yan Chao&#39;s Blog">
 <meta property="og:description" content="用Echart实现数据的可视化">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T06:33:32.964Z">
+<meta property="og:updated_time" content="2018-09-27T06:46:34.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Echarts典型图表可视化">
 <meta name="twitter:description" content="用Echart实现数据的可视化">
@@ -359,7 +359,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-27T14:33:32+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-27T14:46:34+08:00">
                 2018-09-27
               </time>
             
@@ -589,7 +589,7 @@
     // 指定图表的配置项和数据
 option = {
     title: {
-        text: '访问统计'
+        text: '访问统计',
     },
     tooltip : {
         trigger: 'axis',
@@ -603,11 +603,7 @@ option = {
     legend: {
         data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
     },
-    toolbox: {
-        feature: {
-            saveAsImage: {}
-        }
-    },
+
     grid: {
         left: '3%',
         right: '4%',
@@ -683,7 +679,8 @@ option = {
     // 指定图表的配置项和数据
     var option = {
     title: {
-       text: '散点'
+       text: '散点',
+       x:'center',
     },
     xAxis: {},
     yAxis: {},
