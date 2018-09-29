@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Echarts典型图表可视化]]></title>
-    <url>%2F2018%2F09%2F27%2Fecharts-test%2F</url>
+    <url>%2Fpage%2Fecharts-test%2F</url>
     <content type="text"><![CDATA[用Echart实现数据的可视化 // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById('maincharts')); // 指定图表的配置项和数据 var option = { tooltip : { trigger: 'axis', axisPointer : { // 坐标轴指示器，坐标轴触发有效 type : 'shadow' // 默认为直线，可选为：'line' | 'shadow' } }, legend: { data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他'] }, grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true }, xAxis : [ { type : 'category', data : ['周一','周二','周三','周四','周五','周六','周日'] } ], yAxis : [ { type : 'value' } ], series : [ { name:'直接访问', type:'bar', data:[320, 332, 301, 334, 390, 330, 320] }, { name:'邮件营销', type:'bar', stack: '广告', data:[120, 132, 101, 134, 90, 230, 210] }, { name:'联盟广告', type:'bar', stack: '广告', data:[220, 182, 191, 234, 290, 330, 310] }, { name:'视频广告', type:'bar', stack: '广告', data:[150, 232, 201, 154, 190, 330, 410] }, { name:'搜索引擎', type:'bar', data:[862, 1018, 964, 1026, 1679, 1600, 1570], markLine : { lineStyle: { normal: { type: 'dashed' } }, data : [ [{type : 'min'}, {type : 'max'}] ] } }, { name:'百度', type:'bar', barWidth : 5, stack: '搜索引擎', data:[620, 732, 701, 734, 1090, 1130, 1120] }, { name:'谷歌', type:'bar', stack: '搜索引擎', data:[120, 132, 101, 134, 290, 230, 220] }, { name:'必应', type:'bar', stack: '搜索引擎', data:[60, 72, 71, 74, 190, 130, 110] }, { name:'其他', type:'bar', stack: '搜索引擎', data:[62, 82, 91, 84, 109, 110, 120] } ] }; // 使用刚指定的配置项和数据显示图表。 myChart.setOption(option); // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById('maincharts2')); // 指定图表的配置项和数据 var option = { title : { text: '站点用户访问来源', x:'center' }, tooltip : { trigger: 'item', formatter: "{a} {b} : {c} ({d}%)" }, legend: { orient: 'vertical', left: 'left', data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'] }, series : [ { name: '访问来源', type: 'pie', radius : '55%', center: ['50%', '60%'], data:[ {value:335, name:'直接访问'}, {value:310, name:'邮件营销'}, {value:234, name:'联盟广告'}, {value:135, name:'视频广告'}, {value:1548, name:'搜索引擎'} ], itemStyle: { emphasis: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)' } } } ] }; // 使用刚指定的配置项和数据显示图表。 myChart.setOption(option); // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById('maincharts3')); // 指定图表的配置项和数据 option = { title: { text: '访问统计', }, tooltip : { trigger: 'axis', axisPointer: { type: 'cross', label: { backgroundColor: '#6a7985' } } }, legend: { data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎'] }, grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true }, xAxis : [ { type : 'category', boundaryGap : false, data : ['周一','周二','周三','周四','周五','周六','周日'] } ], yAxis : [ { type : 'value' } ], series : [ { name:'邮件营销', type:'line', stack: '总量', areaStyle: {}, data:[120, 132, 101, 134, 90, 230, 210] }, { name:'联盟广告', type:'line', stack: '总量', areaStyle: {}, data:[220, 182, 191, 234, 290, 330, 310] }, { name:'视频广告', type:'line', stack: '总量', areaStyle: {}, data:[150, 232, 201, 154, 190, 330, 410] }, { name:'直接访问', type:'line', stack: '总量', areaStyle: {normal: {}}, data:[320, 332, 301, 334, 390, 330, 320] }, { name:'搜索引擎', type:'line', stack: '总量', label: { normal: { show: true, position: 'top' } }, areaStyle: {normal: {}}, data:[820, 932, 901, 934, 1290, 1330, 1320] } ] }; // 使用刚指定的配置项和数据显示图表。 myChart.setOption(option); // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById('maincharts4')); // 指定图表的配置项和数据 var option = { title: { text: '散点', x:'center', }, xAxis: {}, yAxis: {}, series: [{ symbolSize: 20, data: [ [10.0, 8.04], [8.0, 6.95], [13.0, 7.58], [9.0, 8.81], [11.0, 8.33], [14.0, 9.96], [6.0, 7.24], [4.0, 4.26], [12.0, 10.84], [7.0, 4.82], [5.0, 5.68] ], type: 'scatter' }] }; // 使用刚指定的配置项和数据显示图表。 myChart.setOption(option);]]></content>
       <categories>
         <category>page</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[安装双系统：Win10 + elementary OS]]></title>
-    <url>%2F2018%2F09%2F24%2Finstal2os%2F</url>
+    <url>%2Fsoftware%2Finstal2os%2F</url>
     <content type="text"><![CDATA[这是一篇双系统安装指南。 条件&amp;准备： 适用于GPT分区方式（只要你用的不是老爷机，你的电脑使用的就是这种较新型的分区方式） 操作系统为Windows 10 BIOS关闭安全模式（security mode） BIOS设置U盘启动 硬盘还有超过30G左右的空闲容量 一只4G以上容量的空U盘 下载光盘映象文件 进入elementary OS官网 输入任意金额为0 下载 制作U盘启动盘 插入U盘 下载UltraISO，安装后运行 菜单：文件-打开-elementaryos-0.4.1-stable.2018.iso 菜单：启动-写入光盘映像 选择硬盘驱动器为你的U盘，写入 重启重启你的电脑 安装选择install elementary os，根据提示安装即可 设置 时间同步设置：在终端中输入： 123sudo apt-get install ntpdatesudo ntpdate time.windows.comsudo hwclock --localtime --systohc 科学上网：百度lantern]]></content>
       <categories>
         <category>software</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[大学第二年-上]]></title>
-    <url>%2F2018%2F09%2F09%2Fessay-sencond-year1%2F</url>
+    <url>%2Flife%2Fessay-sencond-year1%2F</url>
     <content type="text"><![CDATA[大二要开始了，回顾一下，畅想一番。 emmm，在高考后的暑假看到自己被录取到中南大学的测绘工程专业时，感到很开心，也有一些惶恐。因为虽然高考有点小遗憾，但我被录取到了我理想的大学，所以心中窃喜。同时，我也感到一丝丝惶恐：测绘是什么，我的计划里从来没有测绘。不过，对于我来说有学读了，可以开开心心地去报名了。心中的惶恐与不爽也随之云消云散。 我按部就班地学，人云亦云，无所适从。我慢慢地想起了小时候，想起了我的梦想。 我想起了。每个中午在鼓捣着计算机。我在鼓捣些什么现在已经忘了，但依稀还记得的是易语言，编程，C语言，软件，游戏······我好像想起了我想成为一个怎样的人，以及在未来，我将从事的职业。我想起了！我的计划中必须有计算机。 我不知道为什么会对计算机如此情有独钟，也许是初次玩电脑游戏时带来的快感，也许是对它神奇功能的惊叹，也许是对它具科技感外观的神往，也可能是初次学习使用编程语言控制电脑的满足感······其实我也不知道是什么原因，我时常想这个问题，便呆呆看着计算机，有些失神。 就是这个梦想，这个遥远的，朦胧的梦想。它给了我力量，给我指明了方向。我有能力做我想做，学我欲学。无论对错，不管结果。 对，我想转专业。第一年我很努力的学了。第二年，我转专业成功了。对我来说这是新的开始，梦的启程。所以转专业对我来说到底有啥卵用呢？？谁能告诉我吗？急，在线等。]]></content>
       <categories>
         <category>life</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[my functions]]></title>
-    <url>%2F2018%2F09%2F02%2Fmy-functions%2F</url>
+    <url>%2Fprogram%2Fc%2Fmy-functions%2F</url>
     <content type="text"><![CDATA[functions used frequently print the binary data1234567891011121314151617template &lt;typename T&gt;void printb(const T&amp; t)&#123; const size_t len = sizeof(T) * 8; char s[len + 1]; typedef unsigned long long ull; auto buff = const_cast&lt;ull&amp;&gt;(reinterpret_cast&lt;const ull&amp;&gt;(t)); s[len] = '\0'; for (size_t i = len - 1; i != (size_t)-1; --i) &#123; s[i] = buff &amp; 1 ? '1' : '0'; buff &gt;&gt;= 1; &#125; cout &lt;&lt; s;&#125;]]></content>
       <categories>
         <category>program</category>
@@ -46,8 +46,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[after-reading-how-does-the-program-run]]></title>
+    <url>%2Fbook%2Fprogram%2Fafter-reading-how-does-the-program-run%2F</url>
+    <content type="text"><![CDATA[the brief concepts of the book, “程序是怎样跑起来的”]]></content>
+      <categories>
+        <category>book</category>
+        <category>program</category>
+      </categories>
+      <tags>
+        <tag>reaciton</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[YunyangMount]]></title>
-    <url>%2F2018%2F08%2F26%2Fyunyangmount%2F</url>
+    <url>%2Fscenery%2Fyunyangmount%2F</url>
     <content type="text"><![CDATA[The Yun yang mountain in Chaling, Hunan]]></content>
       <categories>
         <category>scenery</category>
@@ -58,7 +70,7 @@
   </entry>
   <entry>
     <title><![CDATA[Programming Tricks]]></title>
-    <url>%2F2018%2F08%2F08%2Fstrange-programing-strategies%2F</url>
+    <url>%2Fprogram%2Fc%2Fstrange-programing-strategies%2F</url>
     <content type="text"><![CDATA[some strange programing strategies(c++) Determine if it is odd numbernumber &amp; 0x1 == 0x1ornumber %2 != 0]]></content>
       <categories>
         <category>program</category>
@@ -70,7 +82,7 @@
   </entry>
   <entry>
     <title><![CDATA[Git notes]]></title>
-    <url>%2F2018%2F08%2F01%2Fgit%2F</url>
+    <url>%2Fprogram%2Fgit%2Fgit%2F</url>
     <content type="text"><![CDATA[How to use git? initialize a repository:git init add changed files to the stagegit add &lt;filename1&gt; &lt;filename2&gt; ... remove the file from the working directory or the stagegit rm &lt;filename&gt; commit changes with a message to the repositotygit commit -m &lt;message&gt; discard the changes in working directorygit checkout -- &lt;filename&gt; reset the stagegit resrt head &lt;filename&gt; reset the head pointergit reset [para] &lt;commit-id&gt; get status infomation of the repositorygit status get the changes informationgit diff [commit-id1] [commit-id2] -- [filename] get commit loggit log [--graph --oneline] get all loggit reflog get the infomation of tagsgit show [tagname] rebase the separate commit historys on the same branch to a linegit rebase associate the local repository to a remote one named origingit remote add origin git@server-name:path/repo-name.git clone a remote repository with master branch to local working directorygit clone git@server-name:path/repo-name.git push the local repository to the remotegit push [-u] &lt;remote repositoty&gt; &lt;branch of local repository or tag&gt; pull changes to local working directorygit pull list, creat or delete branchgit branch [-d] [branchname] [remote branch] assoicate the local branch to the removegit branch --set-upstream-to=origin/dev dev switch the current branch or swich and create a new branchgit checkout [-b] &lt;branchname&gt; merge the current branch to the specified branchgit merge [--no-ff -m &quot;...&quot;] save the changed work and stagegit stash list the stashgit stash list apply the stashgit stash apply [s] delete the stashgit stash drop show tags or give commit a tag or delete itgit tag [-a tagname] [-m &quot;...&quot;] [-d] [commit-id] delete the remote taggit push origin :refs/tags/&lt;tagname&gt; operate the remote repositorygit remote [-v] [rm] [add] Linux commands man //manual sudo //superuser do clear //clear the command windows mkdir &lt;directory&gt; //make a directory rmdir &lt;directory&gt; //remove the directory cd &lt;directory&gt; //change the work directory pwd //print the working directory ls [para] [dir] //list the files in a directory rm &lt;filename&gt; //remove the file mv &lt;filename&gt; &lt;directory&gt; //move the file cp &lt;filename&gt; &lt;fiename&gt; //copy the file cat [para] &lt;inputfile1&gt; [inputfile2] ... [operator] [outputfile] //cconcatenate files and print on the standard output diff &lt;file1&gt; &lt;file2&gt; official help for git:123456789101112131415161718192021222324252627282930313233343536373839404142usage: git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;] [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path] [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare] [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;] &lt;command&gt; [&lt;args&gt;]These are common Git commands used in various situations:start a working area (see also: git help tutorial) clone Clone a repository into a new directory init Create an empty Git repository or reinitialize an existing onework on the current change (see also: git help everyday) add Add file contents to the index mv Move or rename a file, a directory, or a symlink reset Reset current HEAD to the specified state rm Remove files from the working tree and from the indexexamine the history and state (see also: git help revisions) bisect Use binary search to find the commit that introduced a bug grep Print lines matching a pattern log Show commit logs show Show various types of objects status Show the working tree statusgrow, mark and tweak your common history branch List, create, or delete branches checkout Switch branches or restore working tree files commit Record changes to the repository diff Show changes between commits, commit and working tree, etc merge Join two or more development histories together rebase Reapply commits on top of another base tip tag Create, list, delete or verify a tag object signed with GPGcollaborate (see also: git help workflows) fetch Download objects and refs from another repository pull Fetch from and integrate with another repository or a local branch push Update remote refs along with associated objects'git help -a' and 'git help -g' list available subcommands and someconcept guides. See 'git help &lt;command&gt;' or 'git help &lt;concept&gt;'to read about a specific subcommand or concept. additional picture and linkgit cheat sheet]]></content>
       <categories>
         <category>program</category>
@@ -82,7 +94,7 @@
   </entry>
   <entry>
     <title><![CDATA[搭建基于Hexo和Github Page的博客]]></title>
-    <url>%2F2018%2F07%2F28%2Fhexo-blog%2F</url>
+    <url>%2Fpage%2Fhexo-blog%2F</url>
     <content type="text"><![CDATA[这个博客由Hexo驱动，使用NeXT主题,托管于Github Pages服务 生成博客 安装git和node.js 安装Hexo：打开终端输入以下命令 1npm install -g hexo-cli 初始化Hexo：新建文件夹，在文件夹内打开终端输入以下命令 1hexo init 生成静态文件启动本地服务器：在终端输入以下命令(有些情况只需使用 hexo s) 123hexo cleanhexo ghexo s 预览博客：打开浏览器输入网址http://localhost:4000 配置博客 安装主题：在终端输入以下命令 1git clone https://github.com/iissnan/hexo-theme-next themes/next 安装顶置和搜索功能插件：在终端输入以下命令 123npm uninstall hexo-generator-index --savenpm install hexo-generator-index-pin-top --savenpm install hexo-generator-searchdb --save 修改站点配置文件（_config.yml） 1theme: next 修改主题配置文件（\themes\next_config.yml） 自定义翻译（\themes\next\languages\zh-Hans.yml） 自定义默认文章格式（\scaffolds\post.md） 添加菜单页面 生成菜单页面：在终端输入以下命令（pagename为tags，categories，about等） 1hexo new page pagename 修改菜单页面：打开文件（\source\pagename\index.md），在头部添加 1type: &quot;pagename&quot; 添加文章 新建文章：在终端输入以下命令 1hexo new postname 打开并修改文章（source_post\postname.md） 部署到Github 配置Git：在终端输入以下命令 12git config --global user.name "username"git config --global user.email "useremail" 生成SSH key：在终端输入以下命令,之后连续回车： 1ssh-keygen -t rsa -C "useremail" 配置SSH key：复制C:\Users\pcusername.ssh\id_rsa.pub中的key，在Github设置页面中添加SSH keys 新建一个Github仓库,名字为&lt;username.github.io&gt; 安装部署插件：在终端输入以下命令 1npm install hexo-deployer-git --save 修改站点配置文件（_config.yml）: 1234deploy: type: git repo: https://github.com/username/username.github.io.git branch: master 生成并部署到username.github.io.git仓库：在终端输入以下命令 绑定个人域名 注册域名 domain.xxx 添加解析 type recode value A @ 192.30.252.153 A @ 192.30.252.154 CNAME www username.github.io 设置自定义域名：在username.github.io仓库的设置中设置自定义域名domain.xxx 添加CNAME文件：在source文件夹中添加CNAME文件并编辑内容为你的域名domain.xxx 部署到Github：终端输入以下命令 12hexo ghexo d 备份博客文件 删除不必要的网页文件和git文件：在终端输入以下命令 1rm .deploy_git/* public/* 移动文件夹到OneDrive文档文件夹，等待自动上传 右击任务栏OneDrive图标-设置-选择文件夹-文档-[博客文件夹名字]-去掉.deploy_git文件夹和public文件夹的勾-确定]]></content>
       <categories>
         <category>page</category>

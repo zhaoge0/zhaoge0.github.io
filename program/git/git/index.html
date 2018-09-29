@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/black/pace-theme-minimal.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="How to use git?">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git notes">
+<meta property="og:url" content="http://imyc.top/program/git/git/index.html">
+<meta property="og:site_name" content="Yan Chao&#39;s Blog">
+<meta property="og:description" content="How to use git?">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WQd2Qgy1ftwpiy26f5j30cq06iaa8.jpg">
+<meta property="og:updated_time" content="2018-08-11T12:51:20.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git notes">
+<meta name="twitter:description" content="How to use git?">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006WQd2Qgy1ftwpiy26f5j30cq06iaa8.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://imyc.top/program/git/git/"/>
+
+
+
+
+
+  <title>Git notes | Yan Chao's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yan Chao's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">The opera house in the morning</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://imyc.top/program/git/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yan Chao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006WQd2Qgy1fto9y5m5zwj30b40b4gmo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yan Chao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git notes</h1>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T08:14:24+08:00">
+                2018-08-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-11T20:51:20+08:00">
+                2018-08-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/program/git/git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/program/git/git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>How to use git?</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="initialize-a-repository"><a href="#initialize-a-repository" class="headerlink" title="initialize a repository:"></a>initialize a repository:</h3><p><code>git init</code></p>
+<h3 id="add-changed-files-to-the-stage"><a href="#add-changed-files-to-the-stage" class="headerlink" title="add changed files to the stage"></a>add changed files to the stage</h3><p><code>git add &lt;filename1&gt; &lt;filename2&gt; ...</code></p>
+<h3 id="remove-the-file-from-the-working-directory-or-the-stage"><a href="#remove-the-file-from-the-working-directory-or-the-stage" class="headerlink" title="remove the file from the working directory or the stage"></a>remove the file from the working directory or the stage</h3><p><code>git rm &lt;filename&gt;</code></p>
+<h3 id="commit-changes-with-a-message-to-the-repositoty"><a href="#commit-changes-with-a-message-to-the-repositoty" class="headerlink" title="commit changes with a message to the repositoty"></a>commit changes with a message to the repositoty</h3><p><code>git commit -m &lt;message&gt;</code></p>
+<h3 id="discard-the-changes-in-working-directory"><a href="#discard-the-changes-in-working-directory" class="headerlink" title="discard the changes in working directory"></a>discard the changes in working directory</h3><p><code>git checkout -- &lt;filename&gt;</code></p>
+<h3 id="reset-the-stage"><a href="#reset-the-stage" class="headerlink" title="reset the stage"></a>reset the stage</h3><p><code>git resrt head &lt;filename&gt;</code></p>
+<h3 id="reset-the-head-pointer"><a href="#reset-the-head-pointer" class="headerlink" title="reset the head pointer"></a>reset the head pointer</h3><p><code>git reset [para] &lt;commit-id&gt;</code></p>
+<h3 id="get-status-infomation-of-the-repository"><a href="#get-status-infomation-of-the-repository" class="headerlink" title="get status infomation of the repository"></a>get status infomation of the repository</h3><p><code>git status</code></p>
+<h3 id="get-the-changes-information"><a href="#get-the-changes-information" class="headerlink" title="get the changes information"></a>get the changes information</h3><p><code>git diff [commit-id1] [commit-id2] -- [filename]</code></p>
+<h3 id="get-commit-log"><a href="#get-commit-log" class="headerlink" title="get commit log"></a>get commit log</h3><p><code>git log [--graph --oneline]</code></p>
+<h3 id="get-all-log"><a href="#get-all-log" class="headerlink" title="get all log"></a>get all log</h3><p><code>git reflog</code></p>
+<h3 id="get-the-infomation-of-tags"><a href="#get-the-infomation-of-tags" class="headerlink" title="get the infomation of tags"></a>get the infomation of tags</h3><p><code>git show [tagname]</code></p>
+<h3 id="rebase-the-separate-commit-historys-on-the-same-branch-to-a-line"><a href="#rebase-the-separate-commit-historys-on-the-same-branch-to-a-line" class="headerlink" title="rebase the separate commit historys on the same branch to a line"></a>rebase the separate commit historys on the same branch to a line</h3><p><code>git rebase</code></p>
+<h3 id="associate-the-local-repository-to-a-remote-one-named-origin"><a href="#associate-the-local-repository-to-a-remote-one-named-origin" class="headerlink" title="associate the local repository to a remote one named origin"></a>associate the local repository to a remote one named origin</h3><p><code>git remote add origin git@server-name:path/repo-name.git</code></p>
+<h3 id="clone-a-remote-repository-with-master-branch-to-local-working-directory"><a href="#clone-a-remote-repository-with-master-branch-to-local-working-directory" class="headerlink" title="clone a remote repository with master branch to local working directory"></a>clone a remote repository with master branch to local working directory</h3><p><code>git clone git@server-name:path/repo-name.git</code></p>
+<h3 id="push-the-local-repository-to-the-remote"><a href="#push-the-local-repository-to-the-remote" class="headerlink" title="push the local repository to the remote"></a>push the local repository to the remote</h3><p><code>git push [-u] &lt;remote repositoty&gt; &lt;branch of local repository or tag&gt;</code></p>
+<h3 id="pull-changes-to-local-working-directory"><a href="#pull-changes-to-local-working-directory" class="headerlink" title="pull changes to local working directory"></a>pull changes to local working directory</h3><p><code>git pull</code></p>
+<h3 id="list-creat-or-delete-branch"><a href="#list-creat-or-delete-branch" class="headerlink" title="list, creat or delete branch"></a>list, creat or delete branch</h3><p><code>git branch [-d] [branchname] [remote branch]</code></p>
+<h3 id="assoicate-the-local-branch-to-the-remove"><a href="#assoicate-the-local-branch-to-the-remove" class="headerlink" title="assoicate the local branch to the remove"></a>assoicate the local branch to the remove</h3><p><code>git branch --set-upstream-to=origin/dev dev</code></p>
+<h3 id="switch-the-current-branch-or-swich-and-create-a-new-branch"><a href="#switch-the-current-branch-or-swich-and-create-a-new-branch" class="headerlink" title="switch the current branch or swich and create a new branch"></a>switch the current branch or swich and create a new branch</h3><p><code>git checkout [-b] &lt;branchname&gt;</code></p>
+<h3 id="merge-the-current-branch-to-the-specified-branch"><a href="#merge-the-current-branch-to-the-specified-branch" class="headerlink" title="merge the current branch to the specified branch"></a>merge the current branch to the specified branch</h3><p><code>git merge [--no-ff -m &quot;...&quot;]</code></p>
+<h3 id="save-the-changed-work-and-stage"><a href="#save-the-changed-work-and-stage" class="headerlink" title="save the changed work and stage"></a>save the changed work and stage</h3><p><code>git stash</code> </p>
+<h3 id="list-the-stash"><a href="#list-the-stash" class="headerlink" title="list the stash"></a>list the stash</h3><p><code>git stash list</code></p>
+<h3 id="apply-the-stash"><a href="#apply-the-stash" class="headerlink" title="apply the stash"></a>apply the stash</h3><p><code>git stash apply [s]</code></p>
+<h3 id="delete-the-stash"><a href="#delete-the-stash" class="headerlink" title="delete the stash"></a>delete the stash</h3><p><code>git stash drop</code></p>
+<h3 id="show-tags-or-give-commit-a-tag-or-delete-it"><a href="#show-tags-or-give-commit-a-tag-or-delete-it" class="headerlink" title="show tags or give commit a tag or delete it"></a>show tags or give commit a tag or delete it</h3><p><code>git tag [-a tagname] [-m &quot;...&quot;] [-d] [commit-id]</code></p>
+<h3 id="delete-the-remote-tag"><a href="#delete-the-remote-tag" class="headerlink" title="delete the remote tag"></a>delete the remote tag</h3><p><code>git push origin :refs/tags/&lt;tagname&gt;</code></p>
+<h3 id="operate-the-remote-repository"><a href="#operate-the-remote-repository" class="headerlink" title="operate the remote repository"></a>operate the remote repository</h3><p><code>git remote [-v] [rm] [add]</code></p>
+<h3 id="Linux-commands"><a href="#Linux-commands" class="headerlink" title="Linux commands"></a>Linux commands</h3><ul>
+<li><code>man   //manual</code></li>
+<li><code>sudo   //superuser do</code></li>
+<li><code>clear    //clear the command windows</code></li>
+<li><code>mkdir &lt;directory&gt;    //make a directory</code></li>
+<li><code>rmdir &lt;directory&gt;    //remove the directory</code></li>
+<li><code>cd &lt;directory&gt;   //change the work directory</code></li>
+<li><code>pwd //print the working directory</code></li>
+<li><code>ls [para] [dir] //list the files in a directory</code></li>
+<li><code>rm &lt;filename&gt;   //remove the file</code></li>
+<li><code>mv &lt;filename&gt; &lt;directory&gt;    //move the file</code></li>
+<li><code>cp &lt;filename&gt; &lt;fiename&gt;    //copy the file</code></li>
+<li><code>cat [para] &lt;inputfile1&gt; [inputfile2] ... [operator] [outputfile]   //cconcatenate files and print on the standard output</code></li>
+<li><code>diff &lt;file1&gt; &lt;file2&gt;</code></li>
+</ul>
+<blockquote>
+<p>official help for git:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">usage: git [--version] [--<span class="built_in">help</span>] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]</span><br><span class="line">           [--<span class="built_in">exec</span>-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]</span><br><span class="line">           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]</span><br><span class="line">           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]</span><br><span class="line">           &lt;<span class="built_in">command</span>&gt; [&lt;args&gt;]</span><br><span class="line"></span><br><span class="line">These are common Git commands used <span class="keyword">in</span> various situations:</span><br><span class="line"></span><br><span class="line">start a working area (see also: git <span class="built_in">help</span> tutorial)</span><br><span class="line">   <span class="built_in">clone</span>      Clone a repository into a new directory</span><br><span class="line">   init       Create an empty Git repository or reinitialize an existing one</span><br><span class="line"></span><br><span class="line">work on the current change (see also: git <span class="built_in">help</span> everyday)</span><br><span class="line">   add        Add file contents to the index</span><br><span class="line">   mv         Move or rename a file, a directory, or a symlink</span><br><span class="line">   reset      Reset current HEAD to the specified state</span><br><span class="line">   rm         Remove files from the working tree and from the index</span><br><span class="line"></span><br><span class="line">examine the <span class="built_in">history</span> and state (see also: git <span class="built_in">help</span> revisions)</span><br><span class="line">   bisect     Use binary search to find the commit that introduced a bug</span><br><span class="line">   grep       Print lines matching a pattern</span><br><span class="line">   <span class="built_in">log</span>        Show commit logs</span><br><span class="line">   show       Show various types of objects</span><br><span class="line">   status     Show the working tree status</span><br><span class="line"></span><br><span class="line">grow, mark and tweak your common <span class="built_in">history</span></span><br><span class="line">   branch     List, create, or delete branches</span><br><span class="line">   checkout   Switch branches or restore working tree files</span><br><span class="line">   commit     Record changes to the repository</span><br><span class="line">   diff       Show changes between commits, commit and working tree, etc</span><br><span class="line">   merge      Join two or more development histories together</span><br><span class="line">   rebase     Reapply commits on top of another base tip</span><br><span class="line">   tag        Create, list, delete or verify a tag object signed with GPG</span><br><span class="line"></span><br><span class="line">collaborate (see also: git <span class="built_in">help</span> workflows)</span><br><span class="line">   fetch      Download objects and refs from another repository</span><br><span class="line">   pull       Fetch from and integrate with another repository or a <span class="built_in">local</span> branch</span><br><span class="line">   push       Update remote refs along with associated objects</span><br><span class="line"></span><br><span class="line"><span class="string">'git help -a'</span> and <span class="string">'git help -g'</span> list available subcommands and some</span><br><span class="line">concept guides. See <span class="string">'git help &lt;command&gt;'</span> or <span class="string">'git help &lt;concept&gt;'</span></span><br><span class="line">to <span class="built_in">read</span> about a specific subcommand or concept.</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="additional-picture-and-link"><a href="#additional-picture-and-link" class="headerlink" title="additional picture and link"></a>additional picture and link</h3><p><img src="https://ws1.sinaimg.cn/large/006WQd2Qgy1ftwpiy26f5j30cq06iaa8.jpg" alt=""><br><a href="https://services.github.com/on-demand/downloads/zh_CN/github-git-cheat-sheet/" target="_blank" rel="noopener">git cheat sheet</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赞赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://ws1.sinaimg.cn/large/006WQd2Qgy1ftp6vf0wd7j30jl0jkjtk.jpg" alt="Yan Chao 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://ws1.sinaimg.cn/large/006WQd2Qgy1ftp6upn1yxj30jz0jrgnp.jpg" alt="Yan Chao 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/page/hexo-blog/" rel="next" title="搭建基于Hexo和Github Page的博客">
+                <i class="fa fa-chevron-left"></i> 搭建基于Hexo和Github Page的博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/program/c/strange-programing-strategies/" rel="prev" title="Programming Tricks">
+                Programming Tricks <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://ws1.sinaimg.cn/large/006WQd2Qgy1fto9y5m5zwj30b40b4gmo.jpg"
+                alt="Yan Chao" />
+            
+              <p class="site-author-name" itemprop="name">Yan Chao</p>
+              <p class="site-description motion-element" itemprop="description">中南大学,数据科学与大数据技术,现住长沙</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=991878768&site=qq&menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yan.chao@csu.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhaoge0" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/imyanchao" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-question-circle"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://thief.one" title="nMask's Blog" target="_blank">nMask's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize-a-repository"><span class="nav-number">1.</span> <span class="nav-text">initialize a repository:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-changed-files-to-the-stage"><span class="nav-number">2.</span> <span class="nav-text">add changed files to the stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove-the-file-from-the-working-directory-or-the-stage"><span class="nav-number">3.</span> <span class="nav-text">remove the file from the working directory or the stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit-changes-with-a-message-to-the-repositoty"><span class="nav-number">4.</span> <span class="nav-text">commit changes with a message to the repositoty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#discard-the-changes-in-working-directory"><span class="nav-number">5.</span> <span class="nav-text">discard the changes in working directory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reset-the-stage"><span class="nav-number">6.</span> <span class="nav-text">reset the stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reset-the-head-pointer"><span class="nav-number">7.</span> <span class="nav-text">reset the head pointer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-status-infomation-of-the-repository"><span class="nav-number">8.</span> <span class="nav-text">get status infomation of the repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-the-changes-information"><span class="nav-number">9.</span> <span class="nav-text">get the changes information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-commit-log"><span class="nav-number">10.</span> <span class="nav-text">get commit log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-all-log"><span class="nav-number">11.</span> <span class="nav-text">get all log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-the-infomation-of-tags"><span class="nav-number">12.</span> <span class="nav-text">get the infomation of tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase-the-separate-commit-historys-on-the-same-branch-to-a-line"><span class="nav-number">13.</span> <span class="nav-text">rebase the separate commit historys on the same branch to a line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#associate-the-local-repository-to-a-remote-one-named-origin"><span class="nav-number">14.</span> <span class="nav-text">associate the local repository to a remote one named origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clone-a-remote-repository-with-master-branch-to-local-working-directory"><span class="nav-number">15.</span> <span class="nav-text">clone a remote repository with master branch to local working directory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-the-local-repository-to-the-remote"><span class="nav-number">16.</span> <span class="nav-text">push the local repository to the remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pull-changes-to-local-working-directory"><span class="nav-number">17.</span> <span class="nav-text">pull changes to local working directory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-creat-or-delete-branch"><span class="nav-number">18.</span> <span class="nav-text">list, creat or delete branch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assoicate-the-local-branch-to-the-remove"><span class="nav-number">19.</span> <span class="nav-text">assoicate the local branch to the remove</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-the-current-branch-or-swich-and-create-a-new-branch"><span class="nav-number">20.</span> <span class="nav-text">switch the current branch or swich and create a new branch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-the-current-branch-to-the-specified-branch"><span class="nav-number">21.</span> <span class="nav-text">merge the current branch to the specified branch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#save-the-changed-work-and-stage"><span class="nav-number">22.</span> <span class="nav-text">save the changed work and stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-the-stash"><span class="nav-number">23.</span> <span class="nav-text">list the stash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply-the-stash"><span class="nav-number">24.</span> <span class="nav-text">apply the stash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-the-stash"><span class="nav-number">25.</span> <span class="nav-text">delete the stash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#show-tags-or-give-commit-a-tag-or-delete-it"><span class="nav-number">26.</span> <span class="nav-text">show tags or give commit a tag or delete it</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-the-remote-tag"><span class="nav-number">27.</span> <span class="nav-text">delete the remote tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operate-the-remote-repository"><span class="nav-number">28.</span> <span class="nav-text">operate the remote repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-commands"><span class="nav-number">29.</span> <span class="nav-text">Linux commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#additional-picture-and-link"><span class="nav-number">30.</span> <span class="nav-text">additional picture and link</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Chao</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom">The opera house in the morning</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+      <style>
+      @media screen and (min-width: 415px){.v .vwrap {border-radius: 15px;}.v .vbtn {border-radius: 15px;box-shadow: 1px 1px 2px #ddd, -1px -1px 2px #ddd;}.vbtn:hover{box-shadow: 1px 1px 2px #3090e4, -1px -1px 2px #3090e4;}}
+
+
+
+    </style>
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5fDDuXFt6WgJrE8bbJbzRsv8-gzGzoHsz',
+        appKey: 'awtRUImLREGGtlwLiA4JQt77',
+        placeholder: '评论前填写邮箱方便与我联系哦~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'3' || 10,
+    });
+
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
